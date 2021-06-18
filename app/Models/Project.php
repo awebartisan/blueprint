@@ -8,4 +8,9 @@ class Project extends BaseModel
         'name',
         'description',
     ];
+
+    public function assets()
+    {
+        return $this->hasMany(Asset::class);
+    }
 }
