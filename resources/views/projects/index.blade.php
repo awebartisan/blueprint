@@ -22,9 +22,11 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($projects as $project)
+                    @foreach ($projects as $project)
                         <tr>
-                            <td>{{ $project->name }}</td>
+                            <td>
+                                <a href="{{ route('projects.show', ['project' => $project]) }}">{{ $project->name }}</a>
+                            </td>
                             <td>{{ $project->created_at }}</td>
                             <td>{{ $project->updated_at }}</td>
                             <td>
