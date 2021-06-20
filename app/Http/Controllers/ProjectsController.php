@@ -66,7 +66,7 @@ class ProjectsController extends Controller
      */
     public function show($id)
     {
-        $project = $this->projects->find($id);
+        $project = $this->projects->find($id, ['assets']);
 
         return view('projects.show', compact('project'));
     }
