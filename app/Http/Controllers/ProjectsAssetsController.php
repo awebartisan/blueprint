@@ -25,19 +25,21 @@ class ProjectsAssetsController extends Controller
 
     public function index()
     {
-        $assets = $this->assets->paginate('created_at')
-            ->map(function ($asset) {
-                return (object)[
-                    'id' => $asset->id,
-                    'path' => $asset->path,
-                    'size' => Storage::size($asset->path),
-                    'download_url' => $asset->download_url,
-                    'mimeType' => Storage::mimeType($asset->path),
-                    'lastModified' => Carbon::createFromTimestampUTC(
-                        Storage::lastModified($asset->path)
-                    )->diffForHumans(),
-                ];
-            });
+        $assets = $this->assets->paginate('created_at');
+
+        /* Transform the collection inside the LengthAwarePaginator instance */
+        $assets->getCollection()->transform(function ($asset) {
+            return (object)[
+                'id' => $asset->id,
+                'path' => $asset->path,
+                'size' => Storage::size($asset->path),
+                'download_url' => $asset->download_url,
+                'mimeType' => Storage::mimeType($asset->path),
+                'lastModified' => Carbon::createFromTimestampUTC(
+                    Storage::lastModified($asset->path)
+                )->diffForHumans(),
+            ];
+        });
 
         return view('projects.assets.index', compact('assets'));
     }

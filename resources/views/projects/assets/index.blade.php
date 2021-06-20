@@ -36,6 +36,7 @@
                             @endforeach
                         </tbody>
                     </table>
+                    {{ $assets->links() }}
                 </div>
             </div>
         </div>
