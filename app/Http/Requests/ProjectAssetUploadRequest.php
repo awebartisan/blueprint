@@ -24,7 +24,7 @@ class ProjectAssetUploadRequest extends FormRequest
     public function rules()
     {
         return [
-            'asset' => ['file', 'mimes:png,jpeg,pdf', 'max:1000']
+            'asset' => ['required', 'file', 'mimes:png,jpeg,pdf', 'max:1000']
         ];
     }
 }
