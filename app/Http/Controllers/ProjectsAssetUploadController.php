@@ -44,9 +44,12 @@ class ProjectsAssetUploadController extends Controller
 
         $path = $request->file('asset')->store('projects');
 
+        $assetOriginalName = $request->file('asset')->getClientOriginalName();
+
         $this->assets->store([
             'path' => $path,
-            'project_id' => $project->id
+            'project_id' => $project->id,
+            'original_name' => $assetOriginalName
         ]);
 
         return redirect()->back()->with('status', 'Asset uploaded successfully');

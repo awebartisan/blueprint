@@ -15,7 +15,8 @@
                     <table class="table table-bordered table-responsive">
                         <thead>
                             <tr>
-                                <th>Asset</th>
+                                <th>Name</th>
+                                <th>Path</th>
                                 <th>Size (bytes)</th>
                                 <th>Last Modified</th>
                                 <th>MIME</th>
@@ -25,6 +26,7 @@
                         <tbody>
                             @foreach ($assets as $asset)
                                 <tr>
+                                    <td>{{ $asset->original_name }}</td>
                                     <td>{{ $asset->path }}</td>
                                     <td>{{ $asset->size }}</td>
                                     <td>{{ $asset->lastModified }}</td>

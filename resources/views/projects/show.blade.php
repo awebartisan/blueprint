@@ -46,13 +46,15 @@
                     <table class="table table-bordered table-responsive">
                         <thead>
                             <tr>
-                                <th>Asset</th>
+                                <th>Asset Name</th>
+                                <th>Path</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($project->assets as $asset)
                                 <tr>
+                                    <td>{{ $asset->original_name }}</td>
                                     <td>{{ $asset->path }}</td>
                                     <td>
                                         <a href="{{ $asset->download_url }}">Download</a>

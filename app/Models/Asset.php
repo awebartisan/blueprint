@@ -9,6 +9,7 @@ class Asset extends BaseModel
     protected $fillable = [
         'path',
         'project_id',
+        'original_name',
     ];
 
     /*

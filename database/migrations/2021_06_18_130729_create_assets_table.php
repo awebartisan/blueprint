@@ -16,6 +16,7 @@ class CreateAssetsTable extends Migration
         Schema::create('assets', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedBigInteger('project_id');
+            $table->string('original_name')->nullable();
             $table->string('path');
             $table->timestamps();
         });

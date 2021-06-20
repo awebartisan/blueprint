@@ -17,7 +17,8 @@ class AssetResource extends Resource
     {
         return [
             'id' => $this->id,
-            'url' => $this->download_url
+            'url' => $this->download_url,
+            'original_name' => $this->original_name,
         ];
     }
 }
