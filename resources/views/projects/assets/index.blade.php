@@ -30,7 +30,7 @@
                                     <td>{{ $asset->lastModified }}</td>
                                     <td>{{ $asset->mimeType }}</td>
                                     <td>
-                                        <a href="{{ $asset->url }}">Download</a>
+                                        <a href="{{ $asset->download_url }}">Download</a>
                                     </td>
                                 </tr>
                             @endforeach

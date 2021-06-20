@@ -55,7 +55,7 @@
                                 <tr>
                                     <td>{{ $asset->path }}</td>
                                     <td>
-                                        <a href="{{ Storage::url($asset->path) }}">Download</a>
+                                        <a href="{{ $asset->download_url }}">Download</a>
                                     </td>
                                 </tr>
                             @endforeach

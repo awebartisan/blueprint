@@ -31,7 +31,7 @@ class ProjectsAssetsController extends Controller
                     'id' => $asset->id,
                     'path' => $asset->path,
                     'size' => Storage::size($asset->path),
-                    'url' => Storage::url($asset->path),
+                    'download_url' => $asset->download_url,
                     'mimeType' => Storage::mimeType($asset->path),
                     'lastModified' => Carbon::createFromTimestampUTC(
                         Storage::lastModified($asset->path)

@@ -17,7 +17,7 @@ class AssetResource extends Resource
     {
         return [
             'id' => $this->id,
-            'url' => url(Storage::url($this->path))
+            'url' => $this->download_url
         ];
     }
 }
