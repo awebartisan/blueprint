@@ -38,6 +38,31 @@
                     </form>
                 </div>
             </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Assets</h3>
+                </div>
+                <div class="panel-body">
+                    <table class="table table-bordered table-responsive">
+                        <thead>
+                            <tr>
+                                <th>Asset</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($project->assets as $asset)
+                                <tr>
+                                    <td>{{ $asset->path }}</td>
+                                    <td>
+                                        <a href="{{ Storage::url($asset->path) }}">Download</a>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
 @endsection

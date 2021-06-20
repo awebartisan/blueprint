@@ -42,7 +42,7 @@ class ProjectsAssetUploadController extends Controller
     {
         $project = $this->projects->find($id);
 
-        $path = $request->file('asset')->store('projects');
+        $path = $request->file('asset')->store('projects', 'public');
 
         $this->assets->store([
             'path' => $path,
